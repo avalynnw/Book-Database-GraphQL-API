@@ -26,7 +26,13 @@ export const ADD_USER = gql`
 
 // TODO: `SAVE_BOOK` will execute the `saveBook` mutation.
 export const SAVE_BOOK = gql`
-  mutation saveBook($BookInput: )
+  mutation saveBook($input: BookInput) {
+    saveBook(input: $BookInput) {
+      user {
+        savedBooks
+      }
+    }
+  }
 `;
 
 // TODO: `REMOVE_BOOK` will execute the `removeBook` mutation.
