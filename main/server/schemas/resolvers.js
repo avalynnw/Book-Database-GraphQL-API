@@ -45,7 +45,7 @@ const resolvers = {
 
 
 
-    // TODO: saveBook(input: BookInput): User
+    // saveBook(input: BookInput): User
     saveBook: async (parent, body, context) => {
       // console.log(body)
       if (context.user) {
