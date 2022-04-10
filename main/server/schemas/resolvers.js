@@ -46,13 +46,14 @@ const resolvers = {
 
 
     // TODO: saveBook(input: BookInput): User
-    saveBook: async (parent, { BookInput }, context) => {
+    saveBook: async (parent, body, context) => {
+      // console.log(body)
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           {
             $push: {
-              savedBooks: { Book: BookInput },
+              savedBooks: body.input,
             },
           },
           { new: true }
@@ -66,14 +67,13 @@ const resolvers = {
 
 
     // TODO: removeBook(bookId: ID): User
-    removeBook: async (parent, { bookId }, context) => {
+    removeBook: async (parent, body, context) => {
       if (context.user) {
-
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           {
             $pull: {
-              savedBooks: BookInput,
+              savedBooks: body.input,
             },
           },
           { new: true }
