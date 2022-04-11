@@ -68,6 +68,7 @@ const resolvers = {
 
     // TODO: removeBook(bookId: ID): User
     removeBook: async (parent, body, context) => {
+      console.log(body);
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
@@ -79,7 +80,6 @@ const resolvers = {
           { new: true }
         );
         return updatedUser;
-
       }
       throw new AuthenticationError("You need to be logged in!");
     },
