@@ -34,7 +34,7 @@ and then you will be able to use the program at the URL:
 
     http://localhost:3000
 
-![Screenshot of the Heroku application](./Assets/application.png)
+![Screenshot of the Heroku application](./assets/application.png)
 
 # [Deployed Heroku Application](https://book-database-apollo.herokuapp.com/)
 
