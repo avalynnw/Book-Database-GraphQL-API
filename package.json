@@ -15,10 +15,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0",
     "gh-pages": "^3.2.3"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10"
+    "concurrently": "^7.1.0"
   }
 }
